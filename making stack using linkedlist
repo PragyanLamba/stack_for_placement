@@ -1,0 +1,134 @@
+class Node:
+    def __init__(self,value):
+        self.data=value
+        self.next=None
+class stack:
+    def __init__(self):
+        self.top = None #jese linked list mai head use krte hai isme top use kre
+                            # ge toh top = none kre hai matlb stack empty hai
+    def isempty(self):
+        return self.top==None
+    def push(self,value):# push stack ke ander value add krne ke liye
+        # ek new node banayi
+        new_node = Node(value)
+        new_node.next=self.top
+         # stack mai jab push krte hai toh value top par jati hai
+         # toh jo top hoga phele se stack ka vo new node ka next banjyega .
+        self.top=new_node
+        #aur fir top par jab new node aajyegi
+        # toh hum new node ko top bana denge
+    def peak(self): # peak se top jo vlaue hai vo pata lagti hai
+        if(self.isempty()):
+            return 'no value in stack'
+        else:
+            return self.top.data
+    def pop (self):# value bhar nikale ne liye
+        if(self.isempty()):
+            return "empty"
+        else:
+            self.top = self.top.next
+
+    def tervase(self):#value  print krne ke liye
+        # ek curr value ah temp variable bana lenge
+        temp=self.top
+        while temp!=None:
+            print(temp.data)
+            temp=temp.next
+
+
+s=stack()
+s.push(3)
+s.push(4)
+s.push(6)
+s.push(9)
+s.tervase()
+print("value of stack\n ")
+print("now we use pop  to remove value")
+s.pop()
+s.tervase()
+print("\n now we use peak ")
+print(s.peak())
+___________________________________________________________________________________________________________________________________________________________________________________________________________________________
+OUTPUT
+9
+6
+4
+3
+value of stack
+ 
+>>> 
+*** Remote Interpreter Reinitialized ***
+9
+6
+4
+3
+value of stack
+ 
+now we use pop  to remove value
+>>> 
+*** Remote Interpreter Reinitialized ***
+9
+6
+4
+3
+value of stack
+ 
+now we use pop  to remove value
+>>> 
+*** Remote Interpreter Reinitialized ***
+9
+6
+4
+3
+value of stack
+ 
+now we use pop  to remove value
+6
+4
+3
+>>> 
+*** Remote Interpreter Reinitialized ***
+9
+6
+4
+3
+value of stack
+ 
+now we use pop  to remove value
+6
+4
+3
+
+ now we use peak 
+6
+4
+3
+>>> 
+*** Remote Interpreter Reinitialized ***
+9
+6
+4
+3
+value of stack
+ 
+now we use pop  to remove value
+6
+4
+3
+
+ now we use peak 
+>>> 
+*** Remote Interpreter Reinitialized ***
+9
+6
+4
+3
+value of stack
+ 
+now we use pop  to remove value
+6
+4
+3
+
+ now we use peak 
+6
